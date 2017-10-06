@@ -32,3 +32,9 @@ Move Gravity Forms injected scripts to the footer
 
 Remove cruft from text when pasting into the TinyMCE editor
 `add_theme_support('abet-tinymce-clean-paste');`
+
+WIP - not yet tested
+`add_theme_support('abet-default-setup');`
+`add_theme_support('abet-install-premium-keys');`
+`add_theme_support('abet-limit-revisions');`
+`add_theme_support('abet-relevanssi-remove-meta');`
