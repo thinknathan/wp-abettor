@@ -8,13 +8,13 @@ namespace Think_Nathan\Abettor\CleanAdminDashboard;
 // Remove WP admin dashboard widgets
 function disable_dashboard_widgets() {
   // Remove "At a Glance"
-  remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' ); 
+  remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
   // Remove "Activity" which includes "Recent Comments"
-  remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' ); 
+  remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );
   // Remove Quick Draft
-  remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' ); 
+  remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
   // Remove WordPress Events and News
-  remove_meta_box( 'dashboard_primary', 'dashboard', 'core' ); 
+  remove_meta_box( 'dashboard_primary', 'dashboard', 'core' );
   
   // Remove welcome panel
   remove_action( 'welcome_panel', 'wp_welcome_panel' ); 
