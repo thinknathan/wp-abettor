@@ -61,6 +61,8 @@ Remove cruft from text when pasting into the TinyMCE editor
 
 WIP - not yet tested
 
+`add_theme_support('disable-backend-admin-bar');`
+
 `add_theme_support('abet-default-setup');`
 
 `add_theme_support('abet-limit-revisions');`
