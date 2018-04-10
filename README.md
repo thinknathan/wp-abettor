@@ -59,9 +59,22 @@ Remove cruft from text when pasting into the TinyMCE editor
 
 ---
 
-WIP - not yet tested
+Removes the back-end admin top bar from larger screens
+`add_theme_support('abet-disable-backend-admin-bar');`
 
-`add_theme_support('disable-backend-admin-bar');`
+---
+
+Adds a View Site link to the admin sidebar
+`add_theme_support('abet-add-view-site-admin-sidebar');`
+
+---
+
+Adds a Logout link to the admin sidebar
+`add_theme_support('abet-add-add-logout-link-admin-sidebar');`
+
+---
+
+WIP - not yet tested
 
 `add_theme_support('abet-default-setup');`
 

@@ -3,7 +3,7 @@
 Plugin Name:  WordPress Abettor
 Plugin URI:   https://github.com/thinknathan/
 Description:  Helper plugin to enable a variety of theme-agnostic features.
-Version:      1.0.0
+Version:      1.0.1
 Author:       Think_Nathan
 Author URI:   https://thinknathan.ca/
 License:      GPLv2
