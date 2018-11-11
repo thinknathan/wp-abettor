@@ -78,6 +78,4 @@ WIP - not yet tested
 
 `add_theme_support('abet-default-setup');`
 
-`add_theme_support('abet-limit-revisions');`
-
 `add_theme_support('abet-relevanssi-remove-meta');`
