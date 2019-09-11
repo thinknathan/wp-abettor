@@ -32,7 +32,7 @@ function add_development_styles() {
         left: 0;
         z-index: 999999;
         pointer-events: none;
-        opacity: .5;
+        opacity: 0.5;
       }
     </style>
   <?php
