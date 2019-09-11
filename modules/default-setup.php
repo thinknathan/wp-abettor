@@ -9,7 +9,7 @@ function default_setup() {
   // set the options to change
   $option = array(
     // change the permalink structure
-    'permalink_structure'           => '/%postname%/',
+    'permalink_structure'           => '/blog/%postname%/',
     // use year/month folders for uploads 
     'uploads_use_yearmonth_folders' => 1,
     // don't use those ugly smilies
