@@ -1,6 +1,6 @@
 {
   "name": "thinknathan/wp-abettor",
-  "type": "wordpress-plugin",
+  "type": "wordpress-muplugin",
   "require": {
     "composer/installers": ">=1.0.6"
   }
