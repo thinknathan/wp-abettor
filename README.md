@@ -2,80 +2,71 @@
 
 ## Installing
 
-Install & activate like any WordPress plugin.
+Install & activate via composer.
 
 ## Functions
 
 *Activate functionality by adding these commands to your functions.php:*
 
----
+* **Hide default dashboard widgets on the back-end**<br>
+  `add_theme_support('abet-clean-admin-dashboard');`
 
-Hide default dashboard widgets on the back-end
+* **Add a fixed position emblem & modifies favicon to differentiate development sites from production sites** (Requires get_env)<br>
+  `add_theme_support('abet-demarcate-development');`
 
-`add_theme_support('abet-clean-admin-dashboard');`
+* **Disable the admin bar on the front-end**<br>
+  `add_theme_support('abet-disable-admin-bar');`
 
----
+* **Turn off comments and related options and widgets in the back-end interface**<br>
+  `add_theme_support('abet-disable-comments');`
 
-Add a fixed position emblem & modifies favicon to differentiate development sites from production sites
- * Requires get_env
+* **Disable Yoast SEO columns for posts and pages on the back-end interface**<br>
+  `add_theme_support('abet-disable-yoast-admin-columns');`
 
-`add_theme_support('abet-demarcate-development');`
+* **Set default settings for Gravity Forms: HTML5 output on & CSS output off**<br>
+  `add_theme_support('abet-gravity-forms-setup');`
 
----
+* **Move Gravity Forms injected scripts to the footer**<br>
+  `add_theme_support('abet-gravity-forms-to-footer');`
 
-Disable the admin bar on the front-end
+* **Remove cruft from text when pasting into the TinyMCE editor**<br>
+  `add_theme_support('abet-tinymce-clean-paste');`
 
-`add_theme_support('abet-disable-admin-bar');`
+* **Removes the back-end admin top bar from larger screens**<br>
+  `add_theme_support('abet-disable-backend-admin-bar');`
 
----
+* **Adds a View Site link to the admin sidebar**<br>
+  `add_theme_support('abet-add-view-site-admin-sidebar');`
 
-Turn off comments and related comments in the back-end interface
+* **Adds a Logout link to the admin sidebar**<br>
+  `add_theme_support('abet-add-add-logout-link-admin-sidebar');`
 
-`add_theme_support('abet-disable-comments');`
+* **Cleaner WordPress markup**<br>
+  `add_theme_support('abet-clean-up');`
 
----
+* **Disable REST API**<br>
+  `add_theme_support('abet-disable-rest-api');`
 
-Disable Yoast SEO columns for posts and pages on the back-end interface
+* **Disable asset versioning**<br>
+  `add_theme_support('abet-disable-asset-versioning');`
 
-`add_theme_support('abet-disable-yoast-admin-columns');`
+* **Disable trackbacks**<br>
+  `add_theme_support('abet-disable-trackbacks');`
 
----
+* **Convert search results from `/?s=query` to `/search/query/`**<br>
+  `add_theme_support('abet-nice-search');`
 
-Set default settings for Gravity Forms: HTML5 output on & CSS output off
+## WIP - not yet tested
 
-`add_theme_support('abet-gravity-forms-setup');`
+* **Default WP Setup**<br>
+  `add_theme_support('abet-default-setup');`
 
----
-
-Move Gravity Forms injected scripts to the footer
-
-`add_theme_support('abet-gravity-forms-to-footer');`
-
----
-
-Remove cruft from text when pasting into the TinyMCE editor
-
-`add_theme_support('abet-tinymce-clean-paste');`
-
----
-
-Removes the back-end admin top bar from larger screens
-`add_theme_support('abet-disable-backend-admin-bar');`
-
----
-
-Adds a View Site link to the admin sidebar
-`add_theme_support('abet-add-view-site-admin-sidebar');`
-
----
-
-Adds a Logout link to the admin sidebar
-`add_theme_support('abet-add-add-logout-link-admin-sidebar');`
-
----
-
-WIP - not yet tested
-
-`add_theme_support('abet-default-setup');`
-
+* **Relevanssi & Yoast SEO compatibility - may no longer be needed**<br>
 `add_theme_support('abet-relevanssi-remove-meta');`
+
+## Credits
+
+Portions of this project are cloned from [Roots Soil](https://github.com/roots/soil/).
+
+Copyright (c) Roots
+[MIT License](https://github.com/roots/soil/blob/master/LICENSE.md)
