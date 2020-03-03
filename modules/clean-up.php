@@ -91,8 +91,12 @@ add_filter('style_loader_tag', __NAMESPACE__ . '\\clean_style_tag');
  * Clean up output of <script> tags
  */
 function clean_script_tag($input) {
-  $input = str_replace("type='text/javascript' ", '', $input);
-  return str_replace("'", '"', $input);
+  if (is_admin()) {
+    return $input;
+  } else {
+    $input = str_replace("type='text/javascript' ", '', $input);
+    return str_replace("'", '"', $input);
+  }
 }
 add_filter('script_loader_tag', __NAMESPACE__ . '\\clean_script_tag');
 
