@@ -58,6 +58,9 @@ Install & activate via composer.
 
 ## WIP - not yet tested
 
+* **Load all stylesheets asynchronously**<br>
+  `add_theme_support('abet-lazyload-css');`
+
 * **Default WP Setup**<br>
   `add_theme_support('abet-default-setup');`
 
