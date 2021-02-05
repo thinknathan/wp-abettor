@@ -6,9 +6,6 @@ namespace Think_Nathan\Abettor\NiceSearch;
  * Redirects search results from /?s=query to /search/query/, converts %20 to +
  *
  * @link http://txfx.net/wordpress-plugins/nice-search/
- *
- * You can enable/disable this feature in functions.php (or app/setup.php if you're using Sage):
- * add_theme_support('soil-nice-search');
  */
 function redirect() {
   global $wp_rewrite;

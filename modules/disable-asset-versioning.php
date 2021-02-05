@@ -4,9 +4,6 @@ namespace Think_Nathan\Abettor\DisableAssetVersioning;
 
 /**
  * Remove version query string from all styles and scripts
- *
- * You can enable/disable this feature in functions.php (or app/setup.php if you're using Sage):
- * add_theme_support('soil-disable-asset-versioning');
  */
 function remove_script_version($src) {
   return $src ? esc_url(remove_query_arg('ver', $src)) : false;

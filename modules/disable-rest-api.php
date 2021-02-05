@@ -4,9 +4,6 @@ namespace Think_Nathan\Abettor\DisableRestApi;
 
 /**
  * Disable WordPress REST API
- *
- * You can enable/disable this feature in functions.php (or app/setup.php if you're using Sage):
- * add_theme_support('soil-disable-rest-api');
  */
 remove_action('xmlrpc_rsd_apis', 'rest_output_rsd');
 remove_action('template_redirect', 'rest_output_link_header', 11);

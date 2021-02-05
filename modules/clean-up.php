@@ -10,9 +10,6 @@ namespace Think_Nathan\Abettor\CleanUp;
  * Remove inline CSS used by Recent Comments widget
  * Remove inline CSS used by posts with galleries
  * Remove self-closing tag
- *
- * You can enable/disable this feature in functions.php (or app/setup.php if you're using Sage):
- * add_theme_support('soil-clean-up');
  */
 function head_cleanup() {
   // Originally from http://wpengineer.com/1438/wordpress-header/
