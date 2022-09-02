@@ -45,6 +45,9 @@ You can install this plugin via composer or the WordPress admin panel.
 - **Logs enqueued scripts and stylesheets to the browser console**<br>
   `add_theme_support('abettor', 'console-log-enqueue');`
 
+- **Adds a Logout link to the admin sidebar**<br>
+  `add_theme_support('abettor', 'add-logout-link-admin-sidebar');`
+
 ## Not yet implemented
 
 - **Hide default dashboard widgets on the back-end**<br>
@@ -58,9 +61,6 @@ You can install this plugin via composer or the WordPress admin panel.
 
 - **Adds a View Site link to the admin sidebar**<br>
   `add_theme_support('abettor', 'add-view-site-admin-sidebar');`
-
-- **Adds a Logout link to the admin sidebar**<br>
-  `add_theme_support('abettor', 'add-logout-link-admin-sidebar');`
 
 - **Set default settings for Gravity Forms: HTML5 output on & CSS output off**<br>
   `add_theme_support('abettor', 'gravity-forms-setup');`
