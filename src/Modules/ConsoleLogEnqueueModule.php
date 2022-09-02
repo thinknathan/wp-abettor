@@ -26,7 +26,7 @@ class ConsoleLogEnqueueModule extends AbstractModule
 	{
 		return apply_filters(
 			'abettor/load-module/' . $this->provides(),
-			$this->options->enabled// && (!is_admin() || wp_doing_ajax()) && (defined('WP_ENV') && WP_ENV === 'development')
+			$this->options->enabled && (!is_admin() || wp_doing_ajax()) && (defined('WP_ENV') && WP_ENV === 'development')
 		);
 	}
 
