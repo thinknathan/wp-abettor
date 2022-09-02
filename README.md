@@ -42,7 +42,7 @@ You can install this plugin via composer or the WordPress admin panel.
 - **Turn off comments and related options and widgets in the back-end interface**<br>
   `add_theme_support('abettor', 'disable-comments');`
 
-- **Logs enqueued scripts and stylesheets to the browser console**<br>
+- **Logs enqueued scripts and stylesheets to the browser console** (Requires get_env)<br>
   `add_theme_support('abettor', 'console-log-enqueue');`
 
 - **Adds a Logout link to the admin sidebar**<br>
@@ -57,10 +57,10 @@ You can install this plugin via composer or the WordPress admin panel.
 - **Removes the back-end admin top bar from larger screens**<br>
   `add_theme_support('abettor', 'disable-backend-admin-bar');`
 
-## Not yet implemented
-
 - **Hide default dashboard widgets on the back-end**<br>
   `add_theme_support('abettor', 'clean-admin-dashboard');`
+
+## Not yet implemented
 
 - **Add a fixed position emblem & modifies favicon to differentiate development sites from production sites** (Requires get_env)<br>
   `add_theme_support('abettor', 'demarcate-development');`
