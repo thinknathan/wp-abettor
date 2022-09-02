@@ -2,3 +2,4 @@ vendor
 composer.lock
 phpunit.xml
 phpcs.xml
+.DS_Store
