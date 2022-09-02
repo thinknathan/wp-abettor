@@ -42,6 +42,9 @@ You can install this plugin via composer or the WordPress admin panel.
 - **Turn off comments and related options and widgets in the back-end interface**<br>
   `add_theme_support('abettor', 'disable-comments');`
 
+- **Logs enqueued scripts and stylesheets to the browser console**<br>
+  `add_theme_support('abettor', 'console-log-enqueue');`
+
 ## Not yet implemented
 
 - **Hide default dashboard widgets on the back-end**<br>
@@ -58,9 +61,6 @@ You can install this plugin via composer or the WordPress admin panel.
 
 - **Adds a Logout link to the admin sidebar**<br>
   `add_theme_support('abettor', 'add-logout-link-admin-sidebar');`
-
-- **Logs enqueued scripts and stylesheets to the browser console**<br>
-  `add_theme_support('abettor', 'console-log-queue');`
 
 - **Set default settings for Gravity Forms: HTML5 output on & CSS output off**<br>
   `add_theme_support('abettor', 'gravity-forms-setup');`
