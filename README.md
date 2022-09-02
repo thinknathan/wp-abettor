@@ -63,8 +63,6 @@ You can install this plugin via composer or the WordPress admin panel.
 - **Set default settings for Gravity Forms: CSS output off**<br>
   `add_theme_support('abettor', 'gravity-forms-setup');`
 
-## Not yet implemented
-
 - **Add a fixed position emblem & modifies favicon to differentiate development sites from production sites** (Requires get_env)<br>
   `add_theme_support('abettor', 'demarcate-development');`
 
