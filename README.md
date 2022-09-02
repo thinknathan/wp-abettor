@@ -54,6 +54,9 @@ You can install this plugin via composer or the WordPress admin panel.
 - **Remove cruft from text when pasting into the TinyMCE editor**<br>
   `add_theme_support('abettor', 'tinymce-clean-paste');`
 
+- **Removes the back-end admin top bar from larger screens**<br>
+  `add_theme_support('abettor', 'disable-backend-admin-bar');`
+
 ## Not yet implemented
 
 - **Hide default dashboard widgets on the back-end**<br>
@@ -61,9 +64,6 @@ You can install this plugin via composer or the WordPress admin panel.
 
 - **Add a fixed position emblem & modifies favicon to differentiate development sites from production sites** (Requires get_env)<br>
   `add_theme_support('abettor', 'demarcate-development');`
-
-- **Removes the back-end admin top bar from larger screens**<br>
-  `add_theme_support('abettor', 'disable-backend-admin-bar');`
 
 - **Set default settings for Gravity Forms: HTML5 output on & CSS output off**<br>
   `add_theme_support('abettor', 'gravity-forms-setup');`
