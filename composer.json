@@ -1,7 +1,21 @@
 {
   "name": "thinknathan/wp-abettor",
   "type": "wordpress-muplugin",
+  "license": "GPLv2",
+  "autoload": {
+    "psr-4": {
+      "Roots\\Abettor\\": "src/"
+    },
+    "files": [
+        "src/helpers.php"
+    ]
+  },
   "require": {
-    "composer/installers": ">=1.0.6"
+    "php": ">=5.6.0"
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   }
 }
