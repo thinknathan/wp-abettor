@@ -51,6 +51,9 @@ You can install this plugin via composer or the WordPress admin panel.
 - **Adds a View Site link to the admin sidebar**<br>
   `add_theme_support('abettor', 'add-view-site-admin-sidebar');`
 
+- **Remove cruft from text when pasting into the TinyMCE editor**<br>
+  `add_theme_support('abettor', 'tinymce-clean-paste');`
+
 ## Not yet implemented
 
 - **Hide default dashboard widgets on the back-end**<br>
@@ -64,12 +67,6 @@ You can install this plugin via composer or the WordPress admin panel.
 
 - **Set default settings for Gravity Forms: HTML5 output on & CSS output off**<br>
   `add_theme_support('abettor', 'gravity-forms-setup');`
-
-- **Remove cruft from text when pasting into the TinyMCE editor**<br>
-  `add_theme_support('abettor', 'tinymce-clean-paste');`
-
-- **Move Gravity Forms injected scripts to the footer**<br>
-  `add_theme_support('abettor', 'gravity-forms-to-footer');`
 
 ## Modules
 
