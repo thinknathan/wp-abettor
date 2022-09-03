@@ -32,33 +32,33 @@ use function remove_query_arg;
  */
 class DisableAssetVersioningModule extends AbstractModule
 {
-		/**
-		 * Name of the module.
-		 *
-		 * @var string
-		 */
-		protected $name = 'disable-asset-versioning';
+	/**
+	 * Name of the module.
+	 *
+	 * @var string
+	 */
+	protected $name = 'disable-asset-versioning';
 
-		/**
-		 * Module handle.
-		 *
-		 * @return void
-		 */
-		public function handle()
-		{
-				$this->filters(['script_loader_src', 'style_loader_src'], 'removeVersionQueryVar', 15, 1);
-		}
+	/**
+	 * Module handle.
+	 *
+	 * @return void
+	 */
+	public function handle()
+	{
+			$this->filters(['script_loader_src', 'style_loader_src'], 'removeVersionQueryVar', 15, 1);
+	}
 
-		/**
-		 * Remove `ver` query variable from URL.
-		 *
-		 * @internal Used by `script_loader_src` and `style_loader_src`
-		 *
-		 * @param string $url
-		 * @return string|bool
-		 */
-		public function removeVersionQueryVar($url)
-		{
-				return $url ? esc_url(remove_query_arg('ver', $url)) : false;
-		}
+	/**
+	 * Remove `ver` query variable from URL.
+	 *
+	 * @internal Used by `script_loader_src` and `style_loader_src`
+	 *
+	 * @param string $url
+	 * @return string|bool
+	 */
+	public function removeVersionQueryVar($url)
+	{
+			return $url ? esc_url(remove_query_arg('ver', $url)) : false;
+	}
 }

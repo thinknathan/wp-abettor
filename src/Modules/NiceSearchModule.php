@@ -35,85 +35,90 @@ use function get_search_link;
  */
 class NiceSearchModule extends AbstractModule
 {
-		/**
-		 * Name of the module.
-		 *
-		 * @var string
-		 */
-		protected $name = 'nice-search';
+	/**
+	 * Name of the module.
+	 *
+	 * @var string
+	 */
+	protected $name = 'nice-search';
 
-		/**
-		 * Module handle.
-		 *
-		 * @return void
-		 */
-		public function handle()
-		{
-				$this->filter('template_redirect', 'redirect');
+	/**
+	 * Module handle.
+	 *
+	 * @return void
+	 */
+	public function handle()
+	{
+			$this->filter('template_redirect', 'redirect');
 
-				$this->compat();
+			$this->compat();
+	}
+
+	/**
+	 * Redirect query string search results to pretty URL.
+	 *
+	 * @internal Used by `template_redirect`
+	 *
+	 * @return void
+	 */
+	public function redirect()
+	{
+			global $wp_rewrite;
+
+		if (
+			!isset($_SERVER['REQUEST_URI'])
+			|| !isset($wp_rewrite)
+			|| !is_object($wp_rewrite)
+			|| !$wp_rewrite->get_search_permastruct()
+		) {
+				return;
 		}
 
-		/**
-		 * Redirect query string search results to pretty URL.
-		 *
-		 * @internal Used by `template_redirect`
-		 *
-		 * @return void
-		 */
-		public function redirect()
-		{
-				global $wp_rewrite;
+			// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+			$request = wp_unslash(filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL));
 
-				if (!isset($_SERVER['REQUEST_URI']) || !isset($wp_rewrite) || !is_object($wp_rewrite) || !$wp_rewrite->get_search_permastruct()) {
-						return;
-				}
+			$search_base = $wp_rewrite->search_base;
 
-				// phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
-				$request = wp_unslash(filter_var($_SERVER['REQUEST_URI'], FILTER_SANITIZE_URL));
-
-				$search_base = $wp_rewrite->search_base;
-
-				if (
-						is_search()
-						&& strpos($request, "/{$search_base}/") === false
-						&& strpos($request, '&') === false
-				) {
-						wp_safe_redirect(get_search_link());
-						exit;
-				}
+		if (
+					is_search()
+					&& strpos($request, "/{$search_base}/") === false
+					&& strpos($request, '&') === false
+		) {
+				wp_safe_redirect(get_search_link());
+				exit;
 		}
+	}
 
-		/**
-		 * Rewrite query string search URL as pretty URL.
-		 *
-		 * @internal Used by `wpseo_json_ld_search_url`
-		 *
-		 * @param string $url
-		 * @return string
-		 */
-		public function rewrite($url)
-		{
-				return str_replace('/?s=', '/search/', $url);
-		}
+	/**
+	 * Rewrite query string search URL as pretty URL.
+	 *
+	 * @internal Used by `wpseo_json_ld_search_url`
+	 *
+	 * @param string $url
+	 * @return string
+	 */
+	public function rewrite($url)
+	{
+			return str_replace('/?s=', '/search/', $url);
+	}
 
-		/**
-		 * Add compatibility with third-party plugins.
-		 *
-		 * @return void
-		 */
-		protected function compat()
-		{
-				$this->compatYoastSeo();
-		}
+	/**
+	 * Add compatibility with third-party plugins.
+	 *
+	 * @return void
+	 */
+	protected function compat()
+	{
+			$this->compatYoastSeo();
+	}
 
-		/**
-		 * Add compatibility for Yoast SEO.
-		 *
-		 * @return void
-		 */
-		protected function compatYoastSeo()
-		{
-				$this->filter('wpseo_json_ld_search_url', 'rewrite');
-		}
+	/**
+	 * Add compatibility for Yoast SEO.
+	 *
+	 * @return void
+	 */
+	protected function compatYoastSeo()
+	{
+			$this->filter('wpseo_json_ld_search_url', 'rewrite');
+	}
 }

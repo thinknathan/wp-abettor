@@ -1,4 +1,5 @@
 <?php
+
 namespace Think_Nathan\Abettor\Modules;
 
 use function is_admin;
@@ -24,8 +25,8 @@ class TinymceCleanPasteModule extends AbstractModule
 	protected function condition()
 	{
 			return apply_filters(
-					'abettor/load-module/' . $this->provides(),
-					$this->options->enabled && is_admin()
+				'abettor/load-module/' . $this->provides(),
+				$this->options->enabled && is_admin()
 			);
 	}
 
@@ -41,18 +42,18 @@ class TinymceCleanPasteModule extends AbstractModule
 
 	/**
 	 * Strip all HTML tags except those we have allowlisted
-	 * 
+	 *
 	 * @internal Used by `tiny_mce_before_init`
 	 *
 	 * @param array $in
 	 * @return array
 	 */
-	public function tinymceCleanPaste( $in )
+	public function tinymceCleanPaste($in)
 	{
 		$in['paste_preprocess'] = "function(plugin, args){
-			const allowList = 'br,p,span,b,strong,i,em,a,h1,h2,h3,h4,h5,h6,ul,li,ol,abbr,address,cite,dfn,del,ins,q,time';
+			const allowed = 'br,p,span,b,strong,i,em,a,h1,h2,h3,h4,h5,h6,ul,li,ol,abbr,address,cite,dfn,del,ins,q,time';
 			const stripped = jQuery('<div>' + args.content + '</div>');
-			const els = stripped.find('*').not(allowList);
+			const els = stripped.find('*').not(allowed);
 			for (let i = els.length - 1; i >= 0; i--) {
 				const e = els[i];
 				jQuery(e).replaceWith(e.innerHTML);

@@ -1,4 +1,5 @@
 <?php
+
 namespace Think_Nathan\Abettor\Modules;
 
 use function add_action;
@@ -25,8 +26,8 @@ class AddViewSiteAdminSidebarModule extends AbstractModule
 	protected function condition()
 	{
 			return apply_filters(
-					'abettor/load-module/' . $this->provides(),
-					$this->options->enabled && is_admin()
+				'abettor/load-module/' . $this->provides(),
+				$this->options->enabled && is_admin()
 			);
 	}
 
@@ -38,15 +39,15 @@ class AddViewSiteAdminSidebarModule extends AbstractModule
 	public function handle()
 	{
 		/* Add new "View Home" item to admin menu */
-		add_action( 'admin_menu', function () {
-			add_menu_page( 'view_the_site_url', 'View Site', 'read', 'view_the_site', '', '
-		dashicons-admin-site', 1 );
-		} );
+		add_action('admin_menu', function () {
+			add_menu_page('view_the_site_url', 'View Site', 'read', 'view_the_site', '', '
+		dashicons-admin-site', 1);
+		});
 
 		/* Attach home URL to "View Home" item */
-		add_action( 'admin_menu', function () {
+		add_action('admin_menu', function () {
 			global $menu;
-			$menu[1][2] = get_home_url();
-		} );
+			$menu[1][2] = get_home_url(); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+		});
 	}
 }

@@ -1,9 +1,10 @@
 <?php
+
 namespace Think_Nathan\Abettor\Modules;
 
 use function add_action;
 use function add_menu_page;
-use function wp_redirect;
+use function wp_safe_redirect;
 use function wp_logout_url;
 use function is_admin;
 
@@ -27,8 +28,8 @@ class AddLogoutLinkAdminSidebarModule extends AbstractModule
 	protected function condition()
 	{
 			return apply_filters(
-					'abettor/load-module/' . $this->provides(),
-					$this->options->enabled && is_admin()
+				'abettor/load-module/' . $this->provides(),
+				$this->options->enabled && is_admin()
 			);
 	}
 
@@ -44,28 +45,31 @@ class AddLogoutLinkAdminSidebarModule extends AbstractModule
 		 *
 		 * @return void
 		 */
-		add_action( 'admin_menu', function() {
+		add_action('admin_menu', function () {
 			add_menu_page(
-				__( 'Logout', 'sage' ),
-				__( 'Logout', 'sage' ),
+				__('Logout', 'abettor'),
+				__('Logout', 'abettor'),
 				'read',
 				'logout',
 				'__return_false',
 				'dashicons-arrow-left-alt',
 				200
 			);
-		} );
+		});
 
 		/**
 		 * Add the link to the admin sidebar
 		 *
 		 * @return void
 		 */
-		add_action( 'admin_init', function() {
-			if ( isset($_GET['page']) && $_GET['page'] == 'logout' ) {
-				wp_redirect( wp_logout_url() );
+		add_action('admin_init', function () {
+			if (
+				isset($_GET['page']) // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				&& $_GET['page'] == 'logout' // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			) {
+				wp_safe_redirect(wp_logout_url());
 				exit();
 			}
-		} );
+		});
 	}
 }

@@ -1,4 +1,5 @@
 <?php
+
 /*
 Plugin Name:        WordPress Abettor
 Plugin URI:         https://github.com/thinknathan/
@@ -14,11 +15,11 @@ GitHub Plugin URI:  https://github.com/thinknathan/wp-abettor/
 namespace Think_Nathan\Abettor;
 
 add_action('plugins_loaded', function () {
-		if (!class_exists(Abettor::class)) {
-				require_once file_exists($autoloader = __DIR__ . '/vendor/autoload.php')
-						? $autoloader
-						: __DIR__ . '/src/autoload.php';
-		}
+	if (!class_exists(Abettor::class)) {
+			require_once file_exists($autoloader = __DIR__ . '/vendor/autoload.php')
+					? $autoloader
+					: __DIR__ . '/src/autoload.php';
+	}
 
 		$modules = Abettor::discoverModules();
 

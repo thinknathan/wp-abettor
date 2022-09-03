@@ -42,42 +42,42 @@ use function wp_parse_url;
  */
 function compare_base_url($base_url, $input_url, $strict_scheme = true)
 {
-		$base_url = trailingslashit($base_url);
-		$input_url = trailingslashit($input_url);
+	$base_url = trailingslashit($base_url);
+	$input_url = trailingslashit($input_url);
 
-		if ($base_url === $input_url) {
-				return true;
-		}
+	if ($base_url === $input_url) {
+			return true;
+	}
 
-		$input_url = wp_parse_url($input_url);
+	$input_url = wp_parse_url($input_url);
 
-		if (!isset($input_url['host'])) {
-				return true;
-		}
+	if (!isset($input_url['host'])) {
+			return true;
+	}
 
-		$base_url = wp_parse_url($base_url);
+	$base_url = wp_parse_url($base_url);
 
-		if (!isset($base_url['host'])) {
-				return false;
-		}
+	if (!isset($base_url['host'])) {
+			return false;
+	}
 
-		if (!$strict_scheme || !isset($input_url['scheme']) || !isset($base_url['scheme'])) {
-				$input_url['scheme'] = $base_url['scheme'] = 'abettor';
-		}
+	if (!$strict_scheme || !isset($input_url['scheme']) || !isset($base_url['scheme'])) {
+			$input_url['scheme'] = $base_url['scheme'] = 'abettor';
+	}
 
-		if (($base_url['scheme'] !== $input_url['scheme'])) {
-				return false;
-		}
+	if (($base_url['scheme'] !== $input_url['scheme'])) {
+			return false;
+	}
 
-		if ($base_url['host'] !== $input_url['host']) {
-				return false;
-		}
+	if ($base_url['host'] !== $input_url['host']) {
+			return false;
+	}
 
-		if ((isset($base_url['port']) || isset($input_url['port']))) {
-				return isset($base_url['port'], $input_url['port']) && $base_url['port'] === $input_url['port'];
-		}
+	if ((isset($base_url['port']) || isset($input_url['port']))) {
+			return isset($base_url['port'], $input_url['port']) && $base_url['port'] === $input_url['port'];
+	}
 
-		return true;
+	return true;
 }
 
 
@@ -93,13 +93,13 @@ function compare_base_url($base_url, $input_url, $strict_scheme = true)
  */
 function is_production_environment()
 {
-		if (defined('WP_ENV')) {
-				return \WP_ENV === 'production';
-		}
+	if (defined('WP_ENV')) {
+			return \WP_ENV === 'production';
+	}
 
-		if (function_exists('wp_get_environment_type')) {
-				return wp_get_environment_type() === 'production';
-		}
+	if (function_exists('wp_get_environment_type')) {
+			return wp_get_environment_type() === 'production';
+	}
 
-		return true;
+	return true;
 }

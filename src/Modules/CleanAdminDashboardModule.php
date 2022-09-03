@@ -1,4 +1,5 @@
 <?php
+
 namespace Think_Nathan\Abettor\Modules;
 
 use function add_action;
@@ -26,8 +27,8 @@ class CleanAdminDashboardModule extends AbstractModule
 	protected function condition()
 	{
 			return apply_filters(
-					'abettor/load-module/' . $this->provides(),
-					$this->options->enabled && is_admin()
+				'abettor/load-module/' . $this->provides(),
+				$this->options->enabled && is_admin()
 			);
 	}
 
@@ -39,27 +40,26 @@ class CleanAdminDashboardModule extends AbstractModule
 	public function handle()
 	{
 		// Remove WP admin dashboard widgets
-		add_action('admin_menu', function ()
-		{
+		add_action('admin_menu', function () {
 			// Remove "At a Glance"
-			remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+			remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
 			// Remove "Activity" which includes "Recent Comments"
-			remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );
+			remove_meta_box('dashboard_activity', 'dashboard', 'normal');
 			// Remove Quick Draft
-			remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+			remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
 			// Remove WordPress Events and News
-			remove_meta_box( 'dashboard_primary', 'dashboard', 'core' );
+			remove_meta_box('dashboard_primary', 'dashboard', 'core');
 			// Remove Welcome panel
-			remove_action( 'welcome_panel', 'wp_welcome_panel' );
+			remove_action('welcome_panel', 'wp_welcome_panel');
 			// Remove Yoast SEO widget
-			remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'core' );
+			remove_meta_box('wpseo-dashboard-overview', 'dashboard', 'core');
 			// Remove Wordfence widget
-			remove_meta_box( 'wordfence_activity_report_widget', 'dashboard', 'core' ); 
+			remove_meta_box('wordfence_activity_report_widget', 'dashboard', 'core');
 		});
 
 		// Hide unwanted elements via CSS
-		add_action( 'admin_head', function ()
-		{ ?>
+		add_action('admin_head', function () {
+			?>
 		<style id="Think_Nathan_Abettor_Modules_CleanAdminDashboardModule">
 			.yoast-notice-go-premium,
 			.wpseo-tab-video-container,
@@ -69,7 +69,7 @@ class CleanAdminDashboardModule extends AbstractModule
 				display: none !important;
 			}
 		</style>
-		<?php
-		}, 6 );
+			<?php
+		}, 6);
 	}
 }

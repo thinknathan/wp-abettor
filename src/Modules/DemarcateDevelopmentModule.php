@@ -1,4 +1,5 @@
 <?php
+
 namespace Think_Nathan\Abettor\Modules;
 
 use function add_action;
@@ -35,20 +36,21 @@ class DemarcateDevelopmentModule extends AbstractModule
 	 */
 	public function handle()
 	{
-		add_action( 'wp_head',			[$this, 'AddDevelopmentStyles'], 5 );
-		add_action( 'admin_head',		[$this, 'AddDevelopmentStyles'], 5 );
-		add_action( 'wp_footer',		[$this, 'AddDevelopmentFavicon'], 5 );
-		add_action( 'admin_footer',	[$this, 'AddDevelopmentFavicon'], 5 );
+		add_action('wp_head', [$this, 'addDevelopmentStyles'], 5);
+		add_action('admin_head', [$this, 'addDevelopmentStyles'], 5);
+		add_action('wp_footer', [$this, 'addDevelopmentFavicon'], 5);
+		add_action('admin_footer', [$this, 'addDevelopmentFavicon'], 5);
 	}
 
 	/**
 	 * Custom development message on dev environment
 	 * Adds a red box to the top-left of all pages with the word "DEV"
-	 * 
+	 *
 	 * @return void
 	 */
-	public function AddDevelopmentStyles()
-	{ ?>
+	public function addDevelopmentStyles()
+	{
+		?>
 			<style id="Think_Nathan_Abettor_Modules_DemarcateDevelopmentModule_AddDevelopmentStyles">
 				/**
 				* wp-abettor plugin
@@ -72,18 +74,19 @@ class DemarcateDevelopmentModule extends AbstractModule
 					opacity: 0.33;
 				}
 			</style>
-	<?php
+		<?php
 	}
 
 	/**
 	 * Custom development favicon
 	 * Adds the letter D on top of the existing favicon
 	 * Credit: http://www.totallycommunications.com/latest/dynamic-favicons-step-by-step-guide/
-	 * 
+	 *
 	 * @return void
 	 */
-	public function AddDevelopmentFavicon()
-	{ ?>
+	public function addDevelopmentFavicon()
+	{
+		?>
 			<script id="Think_Nathan_Abettor_Modules_DemarcateDevelopmentModule_AddDevelopmentFavicon">
 				/**
 				* wp-abettor plugin
@@ -116,6 +119,6 @@ class DemarcateDevelopmentModule extends AbstractModule
 					};
 				})();
 			</script>
-	<?php
+		<?php
 	}
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace Think_Nathan\Abettor\Modules;
 
 use function add_filter;
@@ -25,6 +26,6 @@ class GravityFormsSetupModule extends AbstractModule
 		/**
 		* Turn off Gravity Forms CSS
 		*/
-		add_filter( 'gform_disable_form_theme_css', '__return_true' );
+		add_filter('gform_disable_form_theme_css', '__return_true');
 	}
 }

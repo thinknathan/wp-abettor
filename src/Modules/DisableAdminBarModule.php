@@ -1,4 +1,5 @@
 <?php
+
 namespace Think_Nathan\Abettor\Modules;
 
 use function add_action;
@@ -22,6 +23,6 @@ class DisableAdminBarModule extends AbstractModule
 	 */
 	public function handle()
 	{
-		add_action( 'show_admin_bar', '__return_false' );
+		add_action('show_admin_bar', '__return_false');
 	}
 }

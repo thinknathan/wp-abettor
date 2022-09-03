@@ -1,11 +1,12 @@
 <?php
+
 namespace Think_Nathan\Abettor\Modules;
 
 use function add_action;
 use function is_admin;
 
 /**
- * Hides the admin bar on the backend. 
+ * Hides the admin bar on the backend.
  */
 class DisableBackendAdminBarModule extends AbstractModule
 {
@@ -24,8 +25,8 @@ class DisableBackendAdminBarModule extends AbstractModule
 	protected function condition()
 	{
 			return apply_filters(
-					'abettor/load-module/' . $this->provides(),
-					$this->options->enabled && is_admin()
+				'abettor/load-module/' . $this->provides(),
+				$this->options->enabled && is_admin()
 			);
 	}
 
@@ -36,8 +37,8 @@ class DisableBackendAdminBarModule extends AbstractModule
 	 */
 	public function handle()
 	{
-		add_action( 'admin_head', function ()
-		{ ?>
+		add_action('admin_head', function () {
+			?>
 		<style id="Think_Nathan_Abettor_Modules_DisableBackendAdminBarModule">
 			/**
 			* wp-abettor plugin
@@ -59,7 +60,7 @@ class DisableBackendAdminBarModule extends AbstractModule
 				display: none !important;
 			}
 		</style>
-		<?php
-		}, 6 );
+			<?php
+		}, 6);
 	}
 }
