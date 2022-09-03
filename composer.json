@@ -1,21 +1,33 @@
 {
-  "name": "thinknathan/wp-abettor",
-  "type": "wordpress-muplugin",
-  "license": "GPLv2",
-  "autoload": {
-    "psr-4": {
-      "Roots\\Abettor\\": "src/"
-    },
-    "files": [
-        "src/helpers.php"
-    ]
-  },
-  "require": {
-    "php": ">=5.6.0"
-  },
-  "config": {
-    "allow-plugins": {
-      "dealerdirect/phpcodesniffer-composer-installer": true
-    }
-  }
+	"name": "thinknathan/wp-abettor",
+	"type": "wordpress-muplugin",
+	"license": "GPLv2",
+	"minimum-stability": "dev",
+	"autoload": {
+		"psr-4": {
+			"Think_Nathan\\Abettor\\": "src/"
+		},
+		"files": [
+			"src/helpers.php"
+		]
+	},
+	"require": {
+		"php": ">=7.2.0"
+	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/WordPress/WordPress-Coding-Standards",
+			"no-api": true
+		}
+	],
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.7",
+		"wp-coding-standards/wpcs": "dev-develop"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
 }
