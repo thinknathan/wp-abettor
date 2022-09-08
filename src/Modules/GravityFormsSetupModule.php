@@ -27,5 +27,11 @@ class GravityFormsSetupModule extends AbstractModule
 		* Turn off Gravity Forms CSS
 		*/
 		add_filter('gform_disable_form_theme_css', '__return_true');
+		add_filter('pre_option_rg_gforms_disable_css', '__return_true');
+
+		/**
+		* Turn on Gravity Forms HTML5 output
+		*/
+		add_filter('pre_option_rg_gforms_enable_html5', '__return_true');
 	}
 }
