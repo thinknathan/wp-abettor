@@ -14,12 +14,17 @@ A WordPress plugin which contains a collection of modules to apply theme-agnosti
   </thead>
   <tbody>
     <tr>
-      <td>PHP &gt;= 5.6.x</td>
+      <td>PHP &gt;= 7.2.x</td>
       <td><code>php -v</code></td>
       <td>
         <a href="http://php.net/manual/en/install.php">php.net</a>
       </td>
     </tr>
+		<tr>
+			<td>Wordpress &gt;= 6.0.0</td>
+			<td></td>
+			<td></td>
+		</tr>
   </tbody>
 </table>
 
