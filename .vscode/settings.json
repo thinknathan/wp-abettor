@@ -5,4 +5,11 @@
 	"editor.tabSize": 2,
 	"editor.detectIndentation": false,
 	"phpSniffer.autoDetect": true,
+	"[md]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[php]": {
+		"editor.defaultFormatter": "wongjn.php-sniffer",
+		"editor.formatOnPaste": false
+	}
 }
