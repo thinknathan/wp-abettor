@@ -41,9 +41,9 @@ class DisableBackendAdminBarModule extends AbstractModule
 			?>
 		<style id="Think_Nathan_Abettor_Modules_DisableBackendAdminBarModule">
 			/**
-			* wp-abettor plugin
-			* Hide admin bar for large screens
-			*/
+			 * wp-abettor plugin
+			 * Hide admin bar for large screens
+			 */
 			@media only screen and (min-width: 783px) {
 				#wpadminbar {
 					display: none !important;
@@ -51,11 +51,15 @@ class DisableBackendAdminBarModule extends AbstractModule
 				html { 
 					padding-top: 0 !important;
 				}
+				.acf-headerbar,
+				.woocommerce-layout__header {
+					top: 0 !important;
+				}
 			}
-			
+
 			/**
-			* Hide WordPress icon on top menu
-			*/
+			 * Hide WordPress icon on top menu
+			 */
 			#wp-admin-bar-wp-logo {
 				display: none !important;
 			}
