@@ -238,11 +238,6 @@ class CleanUpModule extends AbstractModule
 			$this->filter('body_class', 'bodyClass');
 			$this->filter('language_attributes', 'languageAttributes');
 
-		if (class_exists(DOMDocument::class)) {
-				$this->filter('style_loader_tag', 'cleanStylesheetLinks');
-				$this->filter('script_loader_tag', 'cleanScriptTags');
-		}
-
 			$this->filters([
 					'get_avatar',          // <img />
 					'comment_id_fields',   // <input />
@@ -278,44 +273,6 @@ class CleanUpModule extends AbstractModule
 		}
 
 			return implode(' ', $attributes);
-	}
-
-	/**
-	 * Clean up output of stylesheet <link> tags
-	 *
-	 * @internal Used by `style_loader_tag`
-	 *
-	 * @param string $html
-	 * @return string
-	 */
-	public function cleanStylesheetLinks($html)
-	{
-			return (new DOM($html))->each(static function ($link) {
-					$link->removeAttribute('type');
-					$link->removeAttribute('id');
-
-				if (($media = $link->getAttribute('media')) && $media !== 'all') {
-						return;
-				}
-
-					$link->removeAttribute('media');
-			})->html();
-	}
-
-	/**
-	 * Clean up output of <script> tags
-	 *
-	 * @internal Used by `script_loader_tag`
-	 *
-	 * @param string $html
-	 * @return string
-	 */
-	public function cleanScriptTags($html)
-	{
-			return (new DOM($html))->each(static function ($script) {
-					$script->removeAttribute('type');
-					$script->removeAttribute('id');
-			})->html();
 	}
 
 	/**
